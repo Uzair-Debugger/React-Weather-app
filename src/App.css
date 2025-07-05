@@ -52,6 +52,10 @@ body{
     width: 80px;
     transition: background-color 0.3s ease;
 }
+.locationBtn{
+    margin: 0 10px;
+    border-radius: 8px;
+}
 .input-wrapper button:hover {
     background-color: #1a5e9a;
 }

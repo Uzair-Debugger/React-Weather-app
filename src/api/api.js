@@ -16,4 +16,17 @@ const getCitySuggestions = async (query) => {
     return data.map(city => `${city.name}, ${city.country}`);
 }
 
-export { getWeather, getCitySuggestions };
+const getCurrentLocation = async () =>{
+    try {
+        const res = await fetch('https://get.geojs.io/v1/ip/geo.json');
+        if (!res.ok)
+            throw new Error('Fetch is unsuccessful')
+
+        const location = await res.json();
+        console.log(location.city)
+        return location.city
+    } catch (error) {
+        console.log(error)
+    }
+}
+export { getWeather, getCitySuggestions, getCurrentLocation };
